@@ -1,0 +1,1 @@
+{"result":"1003","msg":"Success","data":{"brands":{"laketaney","宠袋","豪媤","鲁芯鲜"},"origins":{"国产"},"suitableobjects":{"大型犬","中型犬","小型犬"}},"sign":"2019-09-0909:24:34"}

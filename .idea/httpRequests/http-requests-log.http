@@ -1,0 +1,126 @@
+POST http://localhost:8001/Merchandise/particulars
+
+<> 2019-09-09T111809.500.json
+
+###
+
+POST http://localhost:8001/brand/Type
+
+<> 2019-09-09T093104.200.txt
+
+###
+
+POST http://localhost:8001/brand/Type
+
+<> 2019-09-09T092557.200.txt
+
+###
+
+POST http://localhost:8001/brand/Type
+
+<> 2019-09-09T092434.200.txt
+
+###
+
+POST http://localhost:8001/Order/ById
+
+<> 2019-09-08T044507.500.json
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T040210.200.txt
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T040056.200.txt
+
+###
+
+POST http://localhost:8001/Issue
+
+<> 2019-09-08T015742.200.txt
+
+###
+
+POST http://localhost:8001/Issue
+
+<> 2019-09-08T015456.200.txt
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T013327.200.txt
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T013238.200.txt
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T013153.200.txt
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T011920.200.txt
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T125843.200.txt
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T125819.200.txt
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T125817.200.txt
+
+###
+
+POST http://localhost:8001/Order/List
+
+<> 2019-09-08T125803.200.txt
+
+###
+
+POST http://localhost:8001/publicKey
+
+<> 2019-09-03T105735.200.txt
+
+###
+
+POST http://localhost:8001/publicKey
+
+<> 2019-09-03T105608.200.txt
+
+###
+
+POST http://localhost:8001/User/Login
+
+<> 2019-08-31T104405.500.json
+
+###
+
+POST http://localhost:8001/User/Login
+
+<> 2019-08-31T102918.500.json
+
+###
+
