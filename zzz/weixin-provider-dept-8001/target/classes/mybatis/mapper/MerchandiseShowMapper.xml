@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhan.dao.MerchandiseShowDao">
+    
+    <select id="findById" resultType="MerchandiseShow" parameterType="int">
+        select merchandise_id,originalprice,merchandise,secondsbargain,grouppictures,suitableobject, price from merchandise where merchandise_id = #{id};
+    </select>
+        <select id="findByType" resultType="MerchandiseShow" parameterType="String">
+        select merchandise_id,originalprice,merchandise,secondsbargain,grouppictures,suitableobject, price  from merchandise where belongs like '%${type}%' limit 0,10;
+    </select>
+    <select id="findByTypePaging" resultType="MerchandiseShow">
+        select merchandise_id,originalprice,merchandise,secondsbargain,grouppictures,suitableobject, price  from merchandise where belongs like '%${param1}%' limit ${param2},${param3};
+    </select>
+
+
+
+<select id="findByRecommendType" resultType="MerchandiseShow">
+       SELECT
+	a.merchandise_id,
+	originalprice,
+	merchandise,
+	secondsbargain,
+	grouppictures,
+	suitableobject,
+	price
+FROM
+	merchandise AS a
+	JOIN recommend_merchandise AS b ON a.merchandise_id = b.merchandise_id
+WHERE
+	belongs LIKE  '%${param1}%'
+	LIMIT  ${param2},
+	 ${param3};
+    </select>
+	
+	
+	<select id="findByBrand"  resultType="java.lang.String">
+		 SELECT brand from merchandise group by brand;
+
+	</select>
+	<select id="findByOrigin"  resultType="java.lang.String">
+		 SELECT origin from merchandise group by origin;
+	</select>
+
+
+	<select id="findByObject"  resultType="java.lang.String">
+		 SELECT suitableobject from merchandise group by suitableobject;
+	</select>
+</mapper>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhan.dao.UserInformationDao">
+
+    <select id="findById" resultType="UserInformation" parameterType="int">
+        select id,user_name,pass_word,taobao_name,user_img,birthday,gender,tel,yuchong_vip,balance_account,refund,account_integral,
+        discount_id,shopping_id,favoritesinformation_id,payment_id,receiving_id,accomplish_id,site_id,register_time,new_man
+         from user_information where id = #{id};
+    </select>
+    
+       <select id="findByUserPassWord" resultType="UserInformation">
+        select id,user_name,pass_word,taobao_name,user_img,birthday,gender,tel,yuchong_vip,balance_account,refund,account_integral,
+        discount_id,shopping_id,favoritesinformation_id,payment_id,receiving_id,accomplish_id,site_id,register_time,new_man
+         from user_information where user_name = #{param1} and pass_word =  #{param2};
+    </select>
+     <insert id = "addUser" parameterType = "UserInformation" statementType = "PREPARED" useGeneratedKeys = "true"   timeout="20">
+    insert into user_information (user_name,pass_word,register_time,tel) values(#{param1},#{param2},#{param3},#{param4});
+</insert>
+
+    <update id="updateUser" parameterType="com.yuhan.entities.UserInformation">
+
+        update user_information <set>
+        <if test="user_name != null">user_name = #{user_name},</if>
+        <if test="pass_word != null">pass_word = #{pass_word},</if>
+        <if test="taobao_name != null">taobao_name = #{taobao_name},</if>
+        <if test="user_img != null">user_img = #{user_img},</if>
+        <if test="birthday != null">birthday  = #{birthday},</if>
+        <if test="gender != null">gender = #{gender},</if>
+        <if test="tel != null">tel = #{tel},</if>
+        <if test="yuchong_vip != null">yuchong_vip = #{yuchong_vip},</if>
+        <if test="balance_account != null">balance_account = #{balance_account},</if>
+        <if test="refund != null">refund = #{refund},</if>
+        <if test="account_integral != null">account_integral = #{account_integral},</if>
+        <if test="new_man != null">new_man = #{new_man}</if>
+
+    </set>
+        where id =#{id}
+    </update>
+</mapper>

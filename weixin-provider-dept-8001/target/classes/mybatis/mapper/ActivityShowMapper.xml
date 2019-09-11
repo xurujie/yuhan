@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhan.dao.ActivityShowDao">
+
+    <select id="findByTime" resultType="ActivityShow">
+        select id,activity_type,start_time,end_time,product_list,sum from activity_show where #{param1} between start_time and end_time;
+    </select>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhan.dao.MerchandiseDao">
+    
+    <select id="findById" resultType="Merchandise" parameterType="int">
+        select merchandise,merchandise_id,belongs,img,whethercanactivity,activity_type,activity_coding,title,sub_title,price,originalprice,vip_price,secondsbargain
+        ,api_id,origin,brand,suitableobject,bases,usagemode,limitation_sum,commodity_sales,residual_inventory,mv_url,
+        grouppictures,groupparticular,specification,evaluate_count
+        ,handpick,ship_address,reduce,parcel,integral_buy from merchandise where merchandise_id =#{id};
+    </select>
+    
+</mapper>

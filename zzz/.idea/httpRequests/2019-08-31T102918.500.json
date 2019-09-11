@@ -1,0 +1,8 @@
+{
+  "timestamp": 1567218558449,
+  "status": 500,
+  "error": "Internal Server Error",
+  "exception": "java.lang.IllegalStateException",
+  "message": "org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.lang.IllegalStateException: WRITER",
+  "path": "/User/Login"
+}

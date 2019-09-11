@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhan.dao.SignInDao">
+
+    <select id="findByUserId" resultType="SignIn" parameterType="int">
+        select id,user_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,sign_time,integral from sign_in where user_id = #{user_id};
+    </select>
+
+    <update id="updateDay" parameterType="com.yuhan.entities.SignIn">
+
+    update sign_in <set>
+        <if test="user_id != null">user_id = #{user_id},</if>
+        <if test="monday != null">monday = #{monday},</if>
+        <if test="tuesday != null">tuesday = #{tuesday},</if>
+        <if test="wednesday != null">wednesday = #{wednesday},</if>
+        <if test="thursday != null">thursday = #{thursday},</if>
+        <if test="friday != null">friday = #{friday},</if>
+         <if test="saturday != null">saturday = #{saturday},</if>
+        <if test="sunday != null">sunday = #{sunday},</if>
+        <if test="sign_time != null">sign_time = #{sign_time},</if>
+        <if test="integral !=null">integral = #{integral}</if>
+    </set>
+where id =#{id}
+        </update>
+</mapper>

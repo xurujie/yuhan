@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhan.dao.IntegralDao">
+
+    <select id="findByMerchandiseId" resultType="Integral">
+        select id,merchandise_id,need_integral,need_price,vipneed_integral,vipneed_price,sum from  integral where  merchandise_id = #{param1};
+    </select>
+
+    <select id="findBy" resultType="Integral">
+        select id,merchandise_id,need_integral,need_price,vipneed_integral,vipneed_price,sum from  integral  limit ${param1},${param2};
+    </select>
+</mapper>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhan.dao.OrderListDao">
+    
+    <select id="findByUserId" resultType="OrderList" parameterType="int">
+        select id,user_id,merchandises_id,merchandise_sum,order_time,orderprice,discountcoding,
+        balance_account,integral,status,state,deadline,error
+         from order_list where user_id = #{user_id};
+    </select>
+    
+        <select id="findById" resultType="OrderList" parameterType="int">
+        select id,user_id,merchandises_id,merchandise_sum,order_time,orderprice,discountcoding,
+        balance_account,integral,status,state,deadline,error
+         from order_list where id = #{id};
+    </select>
+    
+        <select id="findByUserIdAndStatus" resultType="OrderList">
+       select id,user_id,merchandises_id,merchandise_sum,order_time,orderprice,discountcoding,
+        balance_account,integral,status,state,deadline,error
+       from order_list where user_id = #{param1} and status= #{param2};
+    </select>
+    <insert id="addOrderList" parameterType="com.yuhan.entities.OrderList">
+       insert into order_list(user_id,merchandises_id,merchandise_sum,order_time,orderprice,discountcoding,
+        balance_account,integral,status,state,deadline,error) values (#{user_id},#{merchandises_id},#{merchandise_sum},#{order_time},#{orderprice},#{discountcoding},#{balance_account},#{integral},#{status},#{state},#{deadline},#{error});
+    </insert>
+</mapper> 

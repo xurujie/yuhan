@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhan.dao.DiscountCouponDao">
+
+    <select id="list" resultType="DiscountCoupon">
+       SELECT
+	a.id,
+	a.discountcoding,
+	a.FULL,
+	a.minus,
+	a.validtime,
+	a.get_number,
+	a.img_url
+    FROM
+	discount_coupon AS a
+	JOIN user_discount_coupon AS b ON a.id = b.discount_coupon_id
+    WHERE
+	b.user_id = #{user_id};
+    </select>
+
+
+    <insert id="addDiscountCoupon" parameterType="Belongs">
+        insert into user_discount_coupon  (user_id,discount_coupon_id,firsttime,endtime) values (#{param1},#{param2},#{param3},#{param4});
+     </insert>
+
+
+	<select id="newDiscountCouponList" resultType="DiscountCoupon">
+       SELECT
+	a.id,
+	a.discountcoding,
+	a.FULL,
+	a.minus,
+	a.validtime,
+	a.get_number,
+	a.img_url
+    FROM
+	discount_coupon AS a
+    WHERE
+	type= #{param1};
+    </select>
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yuhan.dao.ShoppingTrolleyDao">
+
+    <select id="findByUserId" resultType="ShoppingTrolley" parameterType="int">
+        select id,user_id,merchandise_id,merchandise_sum from shopping_trolley where user_id = #{user_id};
+    </select>
+
+    <insert id="addShoppingTrolley"  parameterType="com.yuhan.entities.ShoppingTrolley">
+        insert into shopping_trolley(user_id,merchandise_id,merchandise_sum) values (#{user_id},#{merchandise_id},#{merchandise_sum});
+    </insert>
+
+
+    <delete id="deleteShoppingTrolley">
+   DELETE FROM shopping_trolley where  user_id =#{param1} and merchandise_id = #{param2};
+</delete>
+
+    <update id="updateShoppingTrolley">
+        update shopping_trolley <set>
+        <if test="param3 != null">merchandise_sum = #{param3},</if>
+    </set>
+        where user_id =#{param1} and merchandise_id = #{param2};
+    </update>
+</mapper>
